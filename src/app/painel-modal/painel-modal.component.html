@@ -1,0 +1,28 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Detalhes</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <div class="input-group">
+                    <img src="../../assets/images/bubassauro.jpg" class="card-img-top" alt="imagem do pokemon">
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="input-group">
+                    <p class="col-12">Nome: Bubassauro</p>
+                    <p class="col-12">Ordem: 001</p>
+                    <p class="col-12">Descrição: Descrição do pokemon</p>
+                    <p class="col-12">Peso: 0,7kg</p>
+                    <p class="col-12">Altura: 0,9m</p>
+                    <p class="col-12">Espécie: Espécie do pokemon</p>
+                    <p class="col-12">Tipo: Tipo do pokemon (pode haver mais de um)</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
+  
+<a class="btn btn-primary" (click)="open(content)">Mais detalhes</a>
