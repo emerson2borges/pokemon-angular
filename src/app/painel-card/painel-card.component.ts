@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-painel-card',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./painel-card.component.css']
 })
 export class PainelCardComponent implements OnInit {
+
+  @Input() pokemon: any;
 
   constructor() { }
 

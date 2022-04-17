@@ -1,13 +1,13 @@
 <div class="card" style="width: 18rem;">
-    <img src="../../assets/images/bubassauro.jpg" class="card-img-top" alt="imagem do pokemon">
+    <img src="{{pokemon.image}}" class="card-img-top" alt="imagem do pokemon">
     <ul class="list-group list-group-flush">
         <div class="card-body">
-            <h5 class="card-title">Bubassauro</h5>
+            <h5 class="card-title" id="{{pokemon.id}}">{{pokemon.nome}}</h5>
             <p class="card-text">Breve descricao do Bubassauro</p>
             <div>
             </div>
             <div>
-                <app-painel-modal></app-painel-modal>
+                <app-painel-modal [pokemon]="pokemon"></app-painel-modal>
             </div>
         </div>
     </ul>

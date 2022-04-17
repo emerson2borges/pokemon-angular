@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
 
 @Component({
   selector: 'app-painel-modal',
@@ -10,6 +9,8 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class PainelModalComponent implements OnInit {
 
   closeResult = '';
+
+  @Input() pokemon: any;
 
   constructor(private modalService: NgbModal) { }
 
