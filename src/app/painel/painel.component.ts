@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from '../services/pokemon.service';
+import { Pokemon } from '../shared/pokemon.model';
 
 @Component({
   selector: 'app-painel',
@@ -9,30 +11,19 @@ export class PainelComponent implements OnInit {
 
   pokemon: any;
 
-  pokemons = [
-    {
-      id: 1,
-      nome: 'Bubassauro',
-      descricao: 'Breve descricao do bubassauro',
-      image: '../../assets/images/bubassauro.jpg'
-    },
-    {
-      id: 2,
-      nome: 'Ivyssauro',
-      descricao: 'Breve descricao do ivyssauro',
-      image: '../../assets/images/ivyssauro.jpg'
-    },
-    {
-      id: 1,
-      nome: 'Venussauro',
-      descricao: 'Breve descricao do venussauro',
-      image: '../../assets/images/venussauro.jpg'
-    },
-  ]
+  pokemons: Pokemon[] = [];
 
-  constructor() { }
+  constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
+    this.getAllPokemons();
+  }
+
+  getAllPokemons() {
+    console.log();
+    this.pokemonService.getAllPokemons().subscribe((pokemons: Pokemon[]) => {
+      this.pokemons = pokemons;
+    });
   }
 
 }
