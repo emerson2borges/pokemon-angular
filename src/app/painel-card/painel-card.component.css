@@ -5,3 +5,11 @@
 .btn-primary {
     width: 100%;
 }
+
+.card-text {
+  width: 100%;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}

@@ -18,19 +18,11 @@ export class PokemonService {
     }
 
     getAllPokemons(): Observable<any[]> {
-      console.log('zxczxczxczxcz');
-      return this.httpClient.get<any[]>(this.url)
-        .pipe(
-          retry(2),
-          catchError(this.handleError)) || []
+      return this.httpClient.get<any[]>(this.url).pipe(retry(2), catchError(this.handleError)) || []
     }
 
     getOnePokemon(id: number): Observable<Pokemon> {
-      return this.httpClient.get<Pokemon>(this.url + '/' + id)
-        .pipe(
-          retry(2),
-          catchError(this.handleError)
-        )
+      return this.httpClient.get<Pokemon>(this.url + '/' + id).pipe(retry(2), catchError(this.handleError))
     }
 
     handleError(error: HttpErrorResponse) {
